@@ -5,7 +5,7 @@ Launchpad.ArticlesRoute = Ember.Route.extend
 
 Launchpad.ArticlesShowRoute = Launchpad.ArticlesRoute.extend
   model: (params) ->
-    Launchpad.User.find(params.id)
+    Launchpad.Article.find(params.id)
   setupController: (controller, model) ->
     @_super()
     controller.set('content', model)

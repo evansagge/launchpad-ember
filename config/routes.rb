@@ -11,8 +11,8 @@ Launchpad::Application.routes.draw do
     end
   end
 
-  resources :articles, except: :edit, constraints: FormatTest.new(:json)
-  resources :users, except: :edit, constraints: FormatTest.new(:json)
+  resources :articles, only: [:index, :show], constraints: FormatTest.new(:json)
+  resources :pages, only: :show, constraints: FormatTest.new(:json)
   get '*foo', to: 'home#index', constraints: FormatTest.new(:html)
   get '/', to: 'home#index', constraints: FormatTest.new(:html)
 end

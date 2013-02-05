@@ -1,7 +1,11 @@
 <h1>{{title}}</h1>
 
-<div>
-  {{body}}
+<div class="content">
+  {{{body}}}
 </div>
+
+{{#with user}}
+  <p>posted by {{display_name}}</p>
+{{/with}}
 
 {{#linkTo 'index' class='btn'}}Back{{/linkTo}}

@@ -1,2 +1,2 @@
-Launchpad.User = DS.Model.extend
-  email: DS.attr('string')
+Launchpad.Page = DS.Model.extend
+  title: DS.attr('string')

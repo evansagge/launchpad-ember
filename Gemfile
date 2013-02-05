@@ -15,6 +15,7 @@ gem 'mini_magick'
 gem 'rabl-rails'
 gem 'slim-rails'
 
+gem 'slodown'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -41,8 +42,10 @@ group :development do
 
   gem 'guard-rails'
   gem 'guard-bundler'
-  gem 'guard-coffeescript'
-  gem 'rb-fsevent'
+  gem 'rb-inotify', require: false
+  gem 'rb-fsevent', require: false
+  gem 'rb-fchange', require: false
+  gem 'terminal-notifier-guard'
 
   gem 'capistrano'
 
@@ -53,6 +56,11 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'fabrication'
+  gem 'shoulda-matchers'
+  gem 'mongoid-rspec'
+  gem 'fabrication-rails'
+  gem 'ffaker'
+  gem 'spork'
   gem 'guard-rspec'
+  gem 'guard-spork'
 end

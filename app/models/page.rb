@@ -2,9 +2,9 @@ class Page
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Slugs
+  include Launchpad::Models::MarkdownContent
 
   field :title
-  field :content
   field :published, type: Boolean, default: false
   field :display_title, type: Boolean
 
@@ -15,6 +15,5 @@ class Page
   default_scope desc(:created_at)
 
   validates :title, presence: true
-  validates :content, presence: true
 
 end
