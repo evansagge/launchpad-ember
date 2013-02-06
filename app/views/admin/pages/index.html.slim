@@ -1,0 +1,16 @@
+table class="table table-hover"
+  thead
+    tr
+      th Title
+      th Date Posted
+      th
+      th
+  tbody
+    - @pages.each do |page|
+      tr
+        td = link_to page.title, [:admin, page]
+        td = "#{time_ago_in_words page.created_at} ago"
+        td = link_to 'Edit', [:edit, :admin, page]
+        td = link_to 'Destroy', [:admin, page], confirm: 'Are you sure?', method: :delete
+
+= paginate @pages, outer_window: 7

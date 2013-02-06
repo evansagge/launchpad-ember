@@ -1,0 +1,33 @@
+#fileupload {
+  .upload-button {
+    margin-right: 5px;
+  }
+}
+
+table#uploads {
+  width: 100%;
+  td.preview {
+    width: 100px;
+    text-align: center;
+  }
+
+  td.name {
+    .progress {
+      width: 100%;
+    }
+  }
+
+  td.size {
+    width: 80px;
+    text-align: right;
+  }
+
+  td.action-buttons {
+    width: 200px;
+    text-align: right;
+  }
+
+  td.checkbox {
+    width: 10px;
+  }
+}

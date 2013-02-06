@@ -1,8 +1,7 @@
-<h1>{{email}}</h1>
+{{#if display_title}}
+<h3>{{title}}</h3>
+{{/if}}
 
-<div>
+<div class="content">
+  {{{body}}}
 </div>
-
-<div class='page-header'></div>
-
-{{#linkTo 'users' class='btn'}}Back{{/linkTo}}

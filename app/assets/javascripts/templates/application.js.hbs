@@ -1,23 +1,24 @@
-<div class='navbar navbar-inverse navbar-fixed-top'>
-  <div class='navbar-inner'>
-    <div class='container'>
-      <div class='nav-collapse collapse'>
-        <ul class='nav'>
-          <li {{bindAttr class="isHome:active"}}>{{#linkTo 'index'}}Home{{/linkTo}}</li>
-          <li {{bindAttr class="isUsers:active"}}>{{#linkTo 'users.index'}}Users{{/linkTo}}</li>
-          <li {{bindAttr class="isArticles:active"}}>{{#linkTo 'articles.index'}}Articles{{/linkTo}}</li>
-        </ul>
-      </div>
+<div class="container-narrow">
+  <div class="masthead">
+    <ul class="nav nav-pills pull-right">
+      <li {{bindAttr class="isHome:active"}}>{{#linkTo 'index'}}Home{{/linkTo}}</li>
+      <li {{bindAttr class="isAbout:active"}}>{{#linkTo 'about'}}About{{/linkTo}}</li>
+      <li {{bindAttr class="isResume:active"}}>{{#linkTo 'resume'}}Resume{{/linkTo}}</a></li>
+      <li><a href="https://github.com/evansagge" target="_blank">Portfolio</a></li>
+    </ul>
+    <h2 class="muted">E</h2>
+  </div>
+
+  <hr />
+
+  <div class="row-fluid">
+    <div class="span12">
+      {{outlet}}
     </div>
   </div>
-</div>
-<div class='container' id='main'>
-  <div class='content'>
-    <div class='row'>
-      <div class='span12'>
-        <div class='page-header'></div>
-        {{outlet}}
-      </div>
-    </div>
+
+  <hr />
+  <div class="footer">
+    <p>&copy; Evan Sagge 2012</p>
   </div>
 </div>

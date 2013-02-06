@@ -1,3 +1,13 @@
 {{#each article in articles}}
-  <h3>{{#linkTo 'articles.show' article}}{{article.title}}{{/linkTo}}<h2>
+  <h3>{{#linkTo 'articles.show' article}}{{article.title}}{{/linkTo}}</h3>
+  <div class="content">
+    {{{article.summary}}}
+
+    {{#if article.summarized}}
+      <p>{{#linkTo 'articles.show' article}}&raquo; more after the jump{{/linkTo}}</p>
+    {{/if}}
+  </div>   
+  <hr />
+  <br />
+  <br /> 
 {{/each}}

@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   respond_to :json, :xml
 
   def index
-    @articles = Article.all.includes(:user)
+    @articles = Article.all.includes(:user).page(params[:page]).per(5)
     respond_with @articles
   end
 

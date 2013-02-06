@@ -1,0 +1,10 @@
+= simple_form_for [:admin, @page] do |f|
+  = f.input :published, as: :boolean, inline_label: "Published?", label: false
+  = f.input :title, input_html: { class: "span12" }
+  = f.input :display_title, as: :boolean, inline_label: "Display title?", label: false
+  = f.input :slug, label: "URL Slug", input_html: { class: "span12" }
+  = f.input :content, as: :text, label: "Body", input_html: { class: "span12 wysiwyg", rows: 30 }
+  div class="form-actions"
+    = f.submit @page.new_record? ? "Save Page" : "Update Page", class: "btn btn-primary"
+    | &nbsp;
+    = link_to "Cancel", @page.new_record? ? admin_pages_path : [:admin, @page], class: "btn"

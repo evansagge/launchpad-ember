@@ -1,0 +1,9 @@
+= simple_form_for [:admin, @article], html: { multipart: true } do |f|
+  = f.input :published, as: :boolean, inline_label: "Published?", label: false
+  = f.input :title, input_html: { class: "span12" }
+  = f.input :content, as: :text, label: "Body", input_html: { class: "span12 wysiwyg", rows: 20 }
+  = f.input :image, as: :file
+  div class="form-actions"
+    = f.submit @article.new_record? ? "Save Article" : "Update Article", class: "btn btn-primary"
+    | &nbsp;
+    = link_to "Cancel", @article.new_record? ? admin_articles_path : [:admin, @article], class: "btn"

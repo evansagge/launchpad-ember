@@ -8,4 +8,5 @@ Launchpad.ArticlesShowRoute = Launchpad.ArticlesRoute.extend
     Launchpad.Article.find(params.id)
   setupController: (controller, model) ->
     @_super()
+    controller.set('title', model.get('title'))
     controller.set('content', model)

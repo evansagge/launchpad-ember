@@ -1,0 +1,30 @@
+h1 New upload
+
+= form_for [:admin, Upload.new], html: { multipart: true, id: "fileupload" } do |f|
+  div class="fileupload-progressbar"
+      div class="progress progress-success progress-striped active fade"
+        div class="bar" style="width:0%;"
+
+  div class="fileupload-loading"
+
+  div class="fileupload-buttonbar"
+    span class="btn btn-success fileinput-button upload-button"
+      i class="icon-plus icon-white"
+      span Add files...
+      = f.file_field :raw_data, multiple: true, name: "upload[raw_data]"
+    span class="upload-button"
+      button type="submit" class="btn btn-primary start"
+        i class="icon-upload icon-white"
+        span Start upload
+    span class="upload-button"
+      button type="reset" class="btn btn-warning cancel"
+        i class="icon-ban-circle icon-white"
+        span Cancel upload
+    span class="upload-button"
+      button type="button" class="btn btn-danger delete"
+        i class="icon-trash icon-white"
+        span Delete
+    input type="checkbox" class="toggle"
+
+  table id="uploads"
+    tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"

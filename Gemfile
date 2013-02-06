@@ -17,6 +17,9 @@ gem 'slim-rails'
 
 gem 'slodown'
 
+gem 'simple_form'
+gem 'kaminari'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -42,9 +45,9 @@ group :development do
 
   gem 'guard-rails'
   gem 'guard-bundler'
-  gem 'rb-inotify', require: false
-  gem 'rb-fsevent', require: false
-  gem 'rb-fchange', require: false
+  # gem 'rb-inotify', require: false
+  # gem 'rb-fsevent', require: false
+  # gem 'rb-fchange', require: false
   gem 'terminal-notifier-guard'
 
   gem 'capistrano'

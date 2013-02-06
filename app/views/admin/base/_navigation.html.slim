@@ -1,0 +1,9 @@
+ul class="nav nav-tabs"
+  = active_link_to "#{icon "th-list"} List All", [:admin, controller_name] 
+  - if object = eval("@#{controller_name.singularize}") and !object.new_record?
+      = active_link_to "#{icon "eye-open"} View #{controller_name.singularize.titleize}", [:admin, object]
+      = active_link_to "#{icon "pencil"} Edit #{controller_name.singularize.titleize}", [:edit, :admin, object]
+      li = link_to "#{icon "trash"} Delete #{controller_name.singularize.titleize}".html_safe, [:admin, object], method: :delete, confirm: "Are you sure you want to delete this #{controller_name.singularize}?"
+  - else
+    = active_link_to "#{icon "plus"} New #{controller_name.singularize.titleize}", [:new, :admin, controller_name.singularize]
+      

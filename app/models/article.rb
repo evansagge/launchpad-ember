@@ -23,5 +23,18 @@ class Article
   def image_src
     image.try(:url)
   end
+
+  def body
+    html_content.gsub(/\s*<p>!\[more\]\<\/p>/, '')
+  end
+
+  def summary
+    html_content.split(/\s*<p>!\[more\]<\/p>/).first
+  end
+
+  def summarized?
+    !!(html_content =~ /\s*<p>!\[more\]<\/p>/)
+  end
+  alias :summarized :summarized?
   
 end

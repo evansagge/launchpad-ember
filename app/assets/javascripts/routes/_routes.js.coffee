@@ -3,6 +3,8 @@ Launchpad.Router.map ->
     @route 'show', path: '/:id'
   @resource 'articles', ->
     @route 'show', path: '/:id'
+  @route 'about'
+  @route 'resume'
   true
 
 Launchpad.Router.reopen

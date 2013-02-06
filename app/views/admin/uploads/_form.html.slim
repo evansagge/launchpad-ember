@@ -1,0 +1,7 @@
+= simple_form_for [:admin, @upload] do |f|
+  = f.input :title, input_html: { class: "span12" }
+  = f.input :raw_data, as: :file
+  div class="form-actions"
+    = f.submit @upload.new_record? ? "Upload File" : "Update File", class: "btn btn-primary"
+    | &nbsp;
+    = link_to "Cancel", @upload.new_record? ? admin_uploads_path : [:admin, @upload], class: "btn"

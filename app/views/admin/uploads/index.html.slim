@@ -1,0 +1,30 @@
+h1 All File Uploads
+
+ul class="thumbnails"
+  - @uploads.each do |upload|
+    li class="span4"
+      div class="thumbnail"
+        - if upload.image?
+          = link_to image_tag(upload.url(:thumb)), admin_upload_path(upload, modal: true), data: { toggle: "modal", target: "#modal-upload-#{upload.id}" }
+        - else
+          = link_to image_tag("http://placehold.it/300x200"), admin_upload_path(upload, attachment: true)
+
+        div class="caption"
+          p = link_to upload.title, upload.url
+          p
+            = link_to 'Edit', [:edit, :admin, upload], class: "btn btn-primary"
+            '
+            = link_to 'Destroy', [:admin, upload], class: "btn btn-danger", confirm: 'Are you sure?', method: :delete
+
+        - if upload.image?
+          div id="modal-upload-#{upload.id}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modal-upload-label" aria-hidden="true"
+            div class="modal-header"
+              button type="button" class="close" data-dismiss="modal" aria-hidden="true" x
+              h3 id="modal-upload-label" = upload.title
+            div class="modal-body"
+            div class="modal-footer"
+              = link_to 'Edit', [:edit, :admin, upload], class: "btn btn-primary"
+              '
+              = link_to 'Destroy', [:admin, upload], class: "btn btn-danger", confirm: 'Are you sure?', method: :delete
+
+= paginate @uploads, outer_window: 7

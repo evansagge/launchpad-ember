@@ -1,0 +1,6 @@
+= simple_form_for @user, as: :user, url: user_session_path, html: { id: "login", class: "well", autocomplete: "off" } do |f|
+  h2 Login
+  = f.input :email, required: false, label: false, placeholder: "E-mail Address"
+  = f.input :password, required: false, label: false, placeholder: "Password"
+  = f.input :remember_me, as: :boolean, inline_label: "Remember me", label: false
+  = f.button :submit, class: "btn-large btn-primary", value: "Log In"

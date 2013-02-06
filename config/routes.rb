@@ -11,6 +11,28 @@ Launchpad::Application.routes.draw do
     end
   end
 
+  devise_for :users, path: "admin/users", controllers: { sessions: "admin/sessions" },
+    path_names: { sign_in: "login", sign_out: "logout" }  
+
+  namespace :admin do
+    authenticate :user do
+      resource :profile
+      resources :articles
+      resources :uploads
+      resources :pages
+    end
+
+    authenticated :user do
+      root to: "dashboard#index"
+    end
+
+    unauthenticated do
+      as :user do
+        root to: "sessions#new"
+      end
+    end
+  end  
+
   resources :articles, only: [:index, :show], constraints: FormatTest.new(:json)
   resources :pages, only: :show, constraints: FormatTest.new(:json)
   get '*foo', to: 'home#index', constraints: FormatTest.new(:html)
