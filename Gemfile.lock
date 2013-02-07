@@ -320,7 +320,7 @@ DEPENDENCIES
   pry-rails
   quiet_assets
   rabl-rails
-  rails (= 3.2.11)
+  rails (~> 3.2)
   redcarpet
   rspec-rails
   sass-rails (~> 3.2.3)
