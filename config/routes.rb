@@ -35,6 +35,9 @@ Launchpad::Application.routes.draw do
 
   resources :articles, only: [:index, :show], constraints: FormatTest.new(:json)
   resources :pages, only: :show, constraints: FormatTest.new(:json)
+
+  get "uploads/:id(/:version)(.:format)" => "uploads#show", as: :upload
+
   get '*foo', to: 'home#index', constraints: FormatTest.new(:html)
   get '/', to: 'home#index', constraints: FormatTest.new(:html)
 end
