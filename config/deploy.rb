@@ -11,7 +11,7 @@ load "deploy/assets"
 
 server "173.230.149.202", :web, :app, :db, primary: true
 
-set :application, "launchpad"
+set :application, "launchpad-ember"
 set :domain, "evansagge.com"
 set :user, "deploy"
 set :deploy_to, "/home/#{user}/apps/#{application}"
