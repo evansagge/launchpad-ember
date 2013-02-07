@@ -11,7 +11,7 @@ load "deploy/assets"
 
 server "173.230.149.202", :web, :app, :db, primary: true
 
-set :application, "launchpad-ember"
+set :application, "launchpad"
 set :domain, "evansagge.com"
 set :user, "deploy"
 set :deploy_to, "/home/#{user}/apps/#{application}"
@@ -19,7 +19,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, :git
-set :repository, "git@github.com:evansagge/#{application}.git"
+set :repository, "git@github.com:evansagge/launchpad-ember.git"
 set :branch, "master"
 
 set :default_environment, {
