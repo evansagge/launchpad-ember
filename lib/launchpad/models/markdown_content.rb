@@ -35,7 +35,7 @@ module Launchpad
 end
 
 class Redcarpet::Render::BetterHTML < Redcarpet::Render::HTML
-  include Redcarpet::Render::SmartyPants
+  # include Redcarpet::Render::SmartyPants
 
   def block_code(code, language)
     ::CodeRay.scan(code, language).div(
@@ -50,7 +50,7 @@ class Redcarpet::Render::BetterHTML < Redcarpet::Render::HTML
       oembed = OEmbed::Providers.get(link)
       %q(<div class="embedded %s %s">%s</div>) % [oembed.type, oembed.provider_name.parameterize, oembed.html]
     else
-      super(link, title, alt_text)
+      %q(<img href="%s" title="%s" alt="%s" />) % [link, title, alt_text]
     end
   end
 end
