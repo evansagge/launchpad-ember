@@ -33,3 +33,15 @@ ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup" # last 5 releases
+# after "deploy", "deploy:assets:precompile "
+
+after "deploy", "deploy:postprocessing"
+
+namespace :deploy do
+  task :postprocessing do
+    rake = fetch(:rake, 'rake')
+    rails_env = fetch(:rails_env, 'production')
+    run "cd '#{current_path}' && #{rake} launchpad:markdown:render_html_content RAILS_ENV=#{rails_env}"    
+  end
+end
+
