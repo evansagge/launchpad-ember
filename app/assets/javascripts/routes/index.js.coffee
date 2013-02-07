@@ -3,6 +3,7 @@ Launchpad.IndexRoute = Ember.Route.extend
     Launchpad.Article.find()
   setupController: (controller, model) ->
     @controllerFor('application').set('currentRoute', 'home')
+    @controllerFor('application').resetTitle    
     controller.set('articles', model)
 
 

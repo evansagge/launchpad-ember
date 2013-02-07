@@ -16,6 +16,9 @@ gem 'rabl-rails'
 gem 'slim-rails'
 
 gem 'slodown'
+gem 'redcarpet'
+gem 'coderay'
+gem 'embed'
 
 gem 'simple_form'
 gem 'kaminari'

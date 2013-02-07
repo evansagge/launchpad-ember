@@ -20,6 +20,8 @@ class Article
 
   validates :title, presence: true
 
+  before_save :render_html_content
+
   def image_src
     image.try(:url)
   end

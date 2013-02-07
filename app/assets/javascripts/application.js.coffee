@@ -8,3 +8,6 @@
 #= require launchpad
 
 window.Launchpad = Ember.Application.create()
+
+# $ ->
+#   $('.video').parent().addClass('video-container');

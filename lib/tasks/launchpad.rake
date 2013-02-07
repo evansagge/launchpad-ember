@@ -1,6 +1,6 @@
 namespace :launchpad do
 
-  namespace :models do
+  namespace :markdown do
     task :render_html_content => :environment do
       Article.all.each do |a|
         a.send(:render_html_content)
